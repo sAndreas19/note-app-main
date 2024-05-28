@@ -3,7 +3,6 @@ class HeaderBar extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
 
-
     this.shadowRoot.innerHTML = `
       <style>
         :host {
@@ -46,17 +45,21 @@ class HeaderBar extends HTMLElement {
       </div>
     `;
 
-    this.shadowRoot.querySelector('#search-input').addEventListener('input', this._onSearch.bind(this));
+    this.shadowRoot
+      .querySelector('#search-input')
+      .addEventListener('input', this._onSearch.bind(this));
   }
 
   _onSearch(event) {
     const searchTerm = event.target.value.toLowerCase();
-    this.dispatchEvent(new CustomEvent('search', {
-      detail: { searchTerm },
-      bubbles: true,
-      composed: true
-    }));
+    this.dispatchEvent(
+      new CustomEvent('search', {
+        detail: { searchTerm },
+        bubbles: true,
+        composed: true,
+      }),
+    );
   }
 }
 
-customElements.define("header-bar", HeaderBar);
+customElements.define('header-bar', HeaderBar);

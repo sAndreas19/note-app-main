@@ -1,10 +1,10 @@
-import './note-item.js';
+import './delete-note.js';
 
 class NoteList extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.innerHTML = `
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
                 :host {
@@ -29,17 +29,17 @@ class NoteList extends HTMLElement {
             </style>
             <ul id="notes-list"></ul>
         `;
-    }
+  }
 
-    set notes(notes) {
-        const container = this.shadowRoot.querySelector('#notes-container');
-        container.innerHTML = '';
-        notes.forEach(note => {
-            const noteItemElement = document.createElement('note-item');
-            noteItemElement.note = note;
-            container.appendChild(noteItemElement);
-        });
-    }
+  set notes(notes) {
+    const container = this.shadowRoot.querySelector('#notes-container');
+    container.innerHTML = '';
+    notes.forEach((note) => {
+      const noteItemElement = document.createElement('note-item');
+      noteItemElement.note = note;
+      container.appendChild(noteItemElement);
+    });
+  }
 }
 
 customElements.define('note-list', NoteList);

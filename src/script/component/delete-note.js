@@ -1,4 +1,4 @@
-class FooterBar extends HTMLElement {
+export class DeleteNote extends HTMLElement {
   _shadowRoot = null;
   _style = null;
 
@@ -23,6 +23,15 @@ class FooterBar extends HTMLElement {
           background-color: #E1F7F5;
           margin-top: 20px;
         }
+
+        button {
+            background-color: #E1F7F5;
+            border: none;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: #E1F7F5;
+        }
       `;
   }
 
@@ -41,10 +50,12 @@ class FooterBar extends HTMLElement {
     this._shadowRoot.appendChild(this._style);
     this._shadowRoot.innerHTML += `      
         <div>
-          Note App &copy; 2024
+          <button>
+          <img src="trash-solid.svg" alt="" style="width: 10px; color: white;">
+          Hapus catatan</button>
         </div>
       `;
   }
 }
 
-customElements.define('footer-bar', FooterBar);
+customElements.define('delete-note', DeleteNote);
