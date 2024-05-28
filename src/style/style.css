@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fcfcfc;
+  }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+header {
+  background-color: #E1F7F5;
+  color: #1E0342;
+  padding: 10px;
+  text-align: center;
+}
+  
+main {
+  padding: 20px;
+}
+  
+.notes-container {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+}
+  
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+  
+  .add-note-container {
+    margin-top: 20px;
+  }
